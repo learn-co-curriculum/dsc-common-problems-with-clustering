@@ -1,5 +1,5 @@
 
-# Common Problems With Clustering Algorithms
+# Common Problems with Clustering Algorithms
 
 ## Introduction
 
