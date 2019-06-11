@@ -35,7 +35,7 @@ However, this algorithm often comes with several disadvantages to consider:
 * Scaling our dataset will completely change the results.
 * Initial start points of each centroid have a very strong impact on our final results. A bad start point can cause sub-optimal clusters (see example below)
 
-<img src='bad-centroid-start.gif'>
+<img src='images/bad-centroid-start.gif'>
 
 The animation above shows what can happen when we get a bad centroid initialization. Because of the random points that the centroids were initialized at, this led to one centroid cluster containing no points, while another cluster centroid has combined two clusters by being located in between them!  Even though we had the correct value for K (since we have 4 centroids, and data clearly contains 4 clusters), we ended up with incorrect results. 
 
@@ -57,13 +57,13 @@ However, this algorithm is also built on some assumptions with can be disadvanta
 
 Let's look at an example. Consider the circled points in the following plot:
 
-<img src='bad-hac.png'>
+<img src='images/bad-hac.png'>
 
 The two points circled are from different clusters. However, they are right on the boundary between the two clusters, which has significant overlap between them. Because of this, there is a good chance that the clusters will meet the linkage criteria, and the HAC algorithm will group them together. The centroid of this new (incorrect) cluster is also close to many points on the boundary, meaning that is quite likely that those points will be merged and the incorrect cluster will grow bigger. Early mistakes with the HAC algorithm tend to act as a bit of a slippery slope--and since HAC doesn't constantly reassign points like K-Means does, this means that things can go from bad to worse if mistakes are made early on. 
 
 ## A Note on Visualization
 
-So far, we've checked our work by looking at visualizations of the clusters, and using our eyes and our judgement to check if we agree with the results of the algorithm. However, it's worth remembering that this is highly unlikely to be an option on real-world data, since we can't visualize anything with more than 3 dimensions. Because of this, its often much harder to tell when a clustering algorithm has made a mistake, because we aren't able to use our eyes to confirm or deny the results!
+So far, we've checked our work by looking at visualizations of the clusters, and using our eyes and our judgment to check if we agree with the results of the algorithm. However, it's worth remembering that this is highly unlikely to be an option on real-world data, since we can't visualize anything with more than 3 dimensions. Because of this, its often much harder to tell when a clustering algorithm has made a mistake, because we aren't able to use our eyes to confirm or deny the results!
 
 
 ## Summary
