@@ -57,7 +57,7 @@ However, this algorithm is also built on some assumptions with can be disadvanta
 
 Let's look at an example. Consider the circled points in the following plot:
 
-<img src='images/bad-hac.png'>
+<img src='images/new_bad-hac.png' width='600'>
 
 The two points circled are from different clusters. However, they are right on the boundary between the two clusters, which has significant overlap between them. Because of this, there is a good chance that the clusters will meet the linkage criteria, and the HAC algorithm will group them together. The centroid of this new (incorrect) cluster is also close to many points on the boundary, meaning that is quite likely that those points will be merged and the incorrect cluster will grow bigger. Early mistakes with the HAC algorithm tend to act as a bit of a slippery slope--and since HAC doesn't constantly reassign points like K-Means does, this means that things can go from bad to worse if mistakes are made early on. 
 
@@ -69,3 +69,8 @@ So far, we've checked our work by looking at visualizations of the clusters, and
 ## Summary
 
 In this lesson, we learned about some of the challenges that come with come with clustering, and the relative advantages and disadvantages of K-Means and Hierarchical Agglomerative Clustering. 
+
+
+```python
+
+```
