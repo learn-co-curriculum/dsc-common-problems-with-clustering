@@ -37,6 +37,8 @@ However, this algorithm often comes with several disadvantages to consider:
 
 <img src='images/bad-centroid-start.gif'>
 
+[gif courtesy of Andrey A. Shabalin](http://shabal.in/visuals/kmeans/right.gif)
+
 The animation above shows what can happen when we get a bad centroid initialization. Because of the random points that the centroids were initialized at, this led to one centroid cluster containing no points, while another cluster centroid has combined two clusters by being located in between them!  Even though we had the correct value for K (since we have 4 centroids, and data clearly contains 4 clusters), we ended up with incorrect results. 
 
 Since every dataset is different, and centroids are generated randomly, there is no way to make sure that we have good centroid initialization every time. One way to deal with this is to run a clustering algorithm multiple times, and keep track of how many times the same results come up. The good news here is that bad centroid initializations are typically much less likely than good centroid initializations, so the chances of getting bad results due to poor centroid initialization multiple times in a row are somewhat unlikely. 
