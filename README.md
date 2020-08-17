@@ -25,13 +25,13 @@ To further drive this point home, let's spend some time looking at common proble
 The advantages of the k-means clustering approach are:
 
 * Very easy to implement!
-* With many features, k-means is usually faster than HAC (as long as $k$ is reasonably small) 
+* With many features, k-means is usually faster than HAC (as long as  <img src="https://render.githubusercontent.com/render/math?math=k"> is reasonably small) 
 * Objects are locked into the cluster they are first assigned to and can change as the centroids move around 
 * Clusters are often tighter than those formed by HAC 
 
 However, this algorithm often comes with several disadvantages:
 
-* Quality of results depends on picking the right value for $k$. This can be a problem when we don't know how many clusters to expect in our dataset 
+* Quality of results depends on picking the right value for  <img src="https://render.githubusercontent.com/render/math?math=k"> . This can be a problem when we don't know how many clusters to expect in our dataset 
 * Scaling our dataset will completely change the results 
 * Initial start points of each centroid have a very strong impact on our final results. A bad start point can cause sub-optimal clusters (see example below)
 
@@ -39,7 +39,7 @@ However, this algorithm often comes with several disadvantages:
 
 [gif courtesy of Andrey A. Shabalin](http://shabal.in/visuals/kmeans/right.gif)
 
-The animation above shows what can happen when we get a bad centroid initialization. Because of the random points that the centroids were initialized at, this led to one centroid cluster containing no points, while another cluster centroid has combined two clusters by being located in between them!  Even though we had the correct value for $k$ (since we have 4 centroids, and data clearly contains 4 clusters), we ended up with incorrect results. 
+The animation above shows what can happen when we get a bad centroid initialization. Because of the random points that the centroids were initialized at, this led to one centroid cluster containing no points, while another cluster centroid has combined two clusters by being located in between them!  Even though we had the correct value for  <img src="https://render.githubusercontent.com/render/math?math=k"> (since we have 4 centroids, and data clearly contains 4 clusters), we ended up with incorrect results. 
 
 Since every dataset is different, and centroids are generated randomly, there is no way to make sure that we have good centroid initialization every time. One way to deal with this is to run a clustering algorithm multiple times, and keep track of how many times the same results come up. The good news here is that bad centroid initializations are typically much less likely than good centroid initializations, so the chances of getting bad results due to poor centroid initialization multiple times in a row are somewhat unlikely. 
 
