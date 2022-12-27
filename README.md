@@ -43,25 +43,24 @@ The animation above shows what can happen when we get a bad centroid initializat
 
 Since every dataset is different, and centroids are generated randomly, there is no way to make sure that we have good centroid initialization every time. One way to deal with this is to run a clustering algorithm multiple times, and keep track of how many times the same results come up. The good news here is that bad centroid initializations are typically much less likely than good centroid initializations, so the chances of getting bad results due to poor centroid initialization multiple times in a row are somewhat unlikely. 
 
-Now, let's take a look at HAC. 
+Now, let's take a look at Hierarchical Agglomerative Clustering (HAC). 
 
 ## Advantages & Disadvantages of HAC
 
 HAC is useful as a clustering algorithm because:
 
 * It produces an ordered relationship between clusters, which can be useful when visualized 
-* Smaller clusters are created. This allows us to get a very granular understanding of our dataset, and zoom in at the level where the clusters make the most sense to us (note the coloration of the lines in the example dendrogram above) 
+* It creates smaller clusters. This allows you to get a very granular understanding of the dataset, and zoom in at the level where the clusters make the most sense to you (note the coloration of the lines in the example dendrogram below) 
 
 However, this algorithm is also built on some assumptions which can be disadvantages:
 
 * Results are usually dependent upon the distance metric used 
-* Objects can be grouped 'incorrectly' early on, with no way to relocate them. For instance, consider two points that belong to separate clusters, but are both nearer to each other than the center of the cluster they actually belong to (both are near the "boundary" between their cluster and the opposing cluster). These will be incorrectly grouped as a cluster, which will throw off the clustering of the groups they actually belong to, as well 
+* Objects can be grouped 'incorrectly' early on, with no way to relocate them. For instance, consider two points that belong to separate clusters, but are both nearer to each other than the center of the cluster they actually belong to (both are near the "boundary" between their cluster and the opposing cluster). These will be incorrectly grouped as a cluster, which will throw off the clustering of the groups they actually belong to, as well
 
-Let's look at an example. Consider the circled points in the following plot:
+The visualization below shows the different size clusters and how they agglomerate into larger clusters in both space (left) and in a dendrogram (right). 
 
 <img src='images/new_bad-hac.png' width='600'>
 
-The two points circled are from different clusters. However, they are right on the boundary between the two clusters, which has significant overlap between them. Because of this, there is a good chance that the clusters will meet the linkage criteria, and the HAC algorithm will group them together. The centroid of this new (incorrect) cluster is also close to many points on the boundary, meaning that it is quite likely that those points will be merged and the incorrect cluster will grow bigger. Early mistakes with the HAC algorithm tend to act as a bit of a slippery slope, and since HAC doesn't constantly reassign points like k-means does, this means that things can go from bad to worse if mistakes are made early on. 
 
 ## A Note on Visualization
 
