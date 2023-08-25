@@ -35,7 +35,7 @@ However, this algorithm often comes with several disadvantages:
 * Scaling our dataset will completely change the results 
 * Initial start points of each centroid have a very strong impact on our final results. A bad start point can cause sub-optimal clusters (see example below)
 
-<img src='images/bad-centroid-start.gif'>
+<img src='https://curriculum-content.s3.amazonaws.com/data-science/images/bad-centroid-start.gif'>
 
 [gif courtesy of Andrey A. Shabalin](http://shabal.in/visuals/kmeans/right.gif)
 
@@ -59,7 +59,7 @@ However, this algorithm is also built on some assumptions which can be disadvant
 
 The visualization below shows the different size clusters and how they agglomerate into larger clusters in both space (left) and in a dendrogram (right). 
 
-<img src='images/new_bad-hac.png' width='600'>
+<img src='https://curriculum-content.s3.amazonaws.com/data-science/images/new_bad-hac.png' width='600'>
 
 
 ## A Note on Visualization
